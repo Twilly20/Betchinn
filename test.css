@@ -1,81 +1,35 @@
-/* Police unique et héritée partout */
-:root { --app-font: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
-
-html { font-size: 100%; font-family: var(--app-font); }
-body {
-  font: 1rem/1.5 var(--app-font);
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* Forcer l’héritage (écrase les polices bizarres locales) */
-*, *::before, *::after { font-family: inherit !important; }
-
-/* iOS: évite artefacts rendu (notamment avec fixed) */
-@media (max-width: 480px) {
-  body, .e2, .e3, .e4, .e5, .e6, .e7, .e8 { background-attachment: scroll; }
-}
-
-
-
-/* Base typographique (desktop & mobile) */
-html {
-  font-size: 100%; /* 16px par défaut */
-}
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.5;
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-}
-
-/* Titres / textes avec unités relatives */
-h1 {
-  font-size: 2rem;
-  margin: 0.5rem 0;
-}
-h2 {
-  font-size: 1.5rem;
-  margin: 0.5rem 0;
-}
-p, li, a, button, input {
-  font-size: 1rem;
-}
-
-/* Ajustements spécifiques mobiles */
-@media (max-width: 480px) {
-  h1 { font-size: 1.75rem; }
-  h2 { font-size: 1.25rem; }
-  p, li, a, button, input { font-size: 1.0625rem; } /* ~17px */
-}
-
 /* Styles de base pour le corps de la page */
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
-  background: url("img3.jpeg") no-repeat center center fixed;
+  font-family: "Comic Sans MS", "Comic Sans"; /* Choix d'une police manuscrite pour un style similaire */
+  background: url("img3.jpeg") no-repeat center center fixed; /* Remplacez par l'image de fond */
   background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  overflow: auto;
+  overflow: auto; /* Permettre le défilement si le contenu dépasse la hauteur de la fenêtre */
 }
 
+/* Style pour le conteneur principal */
 .container {
-  background: rgba(255, 255, 255, 0.5);
-  border-radius: 20px;
+  background: rgba(
+    255,
+    255,
+    255,
+    0.5
+  ); /* Fond blanc avec un peu de transparence */
+  border-radius: 20px; /* Coins arrondis */
   padding: 40px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Ombre pour donner de la profondeur */
   width: 80%;
   max-width: 800px;
   text-align: center;
   position: relative;
 }
 
+/* Style pour l'en-tête */
 .header {
   background: #ffffff;
   border: 2px solid #87ceeb;
@@ -84,6 +38,7 @@ body {
   position: relative;
 }
 
+/* Style pour le texte d'introduction */
 .title-bg {
   background-color: #4e8aa3a7;
   padding: 10px 20px;
@@ -95,19 +50,23 @@ body {
   transform: translateX(-50%);
   color: #000;
   font-weight: bold;
+  font-family: cursive; /* Police manuscrite pour correspondre au style de l'image */
 }
 
+/* Style pour le texte principal */
 .title {
   font-size: 18px;
   color: #000;
   font-weight: normal;
   margin-top: 40px;
-  text-align: justify;
-  max-height: 80vh;
-  overflow-y: auto;
+  text-align: justify; /* Justifier le texte pour une meilleure lisibilité */
+  font-family: "Comic Sans MS", "Comic Sans", cursive; /* Police manuscrite pour correspondre au style de l'image */
+  max-height: 80vh; /* Limiter la hauteur maximale à 80% de la hauteur de la fenêtre */
+  overflow-y: auto; /* Permettre le défilement vertical si le texte dépasse la hauteur maximale */
   padding: 10px;
 }
 
+/* Style pour le conteneur du champ de saisie et du bouton */
 .input-container {
   display: flex;
   justify-content: center;
@@ -115,15 +74,19 @@ body {
   margin-top: 20px;
 }
 
+/* Style pour le champ de saisie */
 .input-field {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 14px;
-  margin-right: 10px;
-  width: calc(100% - 150px);
+  margin-right: 10px; /* Espace entre le champ de saisie et le bouton */
+  width: calc(
+    100% - 150px
+  ); /* Ajustez la largeur en fonction de la largeur du conteneur */
 }
 
+/* Style pour le lien en bas */
 .bottom-link {
   display: block;
   padding: 10px 20px;
@@ -134,38 +97,114 @@ body {
   font-size: 14px;
   text-align: center;
   transition: background-color 0.3s;
-  white-space: nowrap;
+  white-space: nowrap; /* Empêche le bouton de se briser en plusieurs lignes */
 }
 
+/* Changer la couleur de fond du lien au survol */
 .bottom-link:hover {
   background-color: #0056b3;
 }
 
+/* Style pour le message d'erreur */
 .error-message {
   color: red;
   margin-top: 10px;
 }
 
-/* Variantes de pages avec image de fond */
-.e2, .e3, .e4, .e5, .e6, .e7, .e8 {
+/* Styles de base pour le corps de la page */
+.e2 {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
+  font-family: "Comic Sans MS", "Comic Sans", cursive; /* Choix d'une police manuscrite pour un style similaire */
+  background: url("img1.jpeg") no-repeat center center fixed; /* Remplacez par l'image de fond */
   background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  overflow: auto;
+  overflow: auto; /* Permettre le défilement si le contenu dépasse la hauteur de la fenêtre */
 }
 
-.e2 { background-image: url("img1.jpeg"); }
-.e3 { background-image: url("img2.jpeg"); }
-.e4 { background-image: url("img4.jpeg"); }
-.e5 { background-image: url("img5.jpeg"); }
-.e6 { background-image: url("img6.jpeg"); }
-.e7 { background-image: url("img7.jpeg"); }
-.e8 { background-image: url("img8.webp"); }
+/* Styles de base pour le corps de la page */
+.e3 {
+  margin: 0;
+  padding: 0;
+  font-family: "Comic Sans MS", "Comic Sans", cursive; /* Choix d'une police manuscrite pour un style similaire */
+  background: url("img2.jpeg") no-repeat center center fixed; /* Remplacez par l'image de fond */
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: auto; /* Permettre le défilement si le contenu dépasse la hauteur de la fenêtre */
+}
+
+/* Styles de base pour le corps de la page */
+.e4 {
+  margin: 0;
+  padding: 0;
+  font-family: "Comic Sans MS", "Comic Sans"; /* Choix d'une police manuscrite pour un style similaire */
+  background: url("img4.jpeg") no-repeat center center fixed; /* Remplacez par l'image de fond */
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: auto; /* Permettre le défilement si le contenu dépasse la hauteur de la fenêtre */
+}
+
+/* Styles de base pour le corps de la page */
+.e5 {
+  margin: 0;
+  padding: 0;
+  font-family: "Comic Sans MS", "Comic Sans", cursive; /* Choix d'une police manuscrite pour un style similaire */
+  background: url("img5.jpeg") no-repeat center center fixed; /* Remplacez par l'image de fond */
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: auto; /* Permettre le défilement si le contenu dépasse la hauteur de la fenêtre */
+}
+
+/* Styles de base pour le corps de la page */
+.e6 {
+  margin: 0;
+  padding: 0;
+  font-family: "Comic Sans MS", "Comic Sans", cursive; /* Choix d'une police manuscrite pour un style similaire */
+  background: url("img6.jpeg") no-repeat center center fixed; /* Remplacez par l'image de fond */
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: auto; /* Permettre le défilement si le contenu dépasse la hauteur de la fenêtre */
+}
+
+/* Styles de base pour le corps de la page */
+.e7 {
+  margin: 0;
+  padding: 0;
+  font-family: "Comic Sans MS", "Comic Sans", cursive; /* Choix d'une police manuscrite pour un style similaire */
+  background: url("img7.jpeg") no-repeat center center fixed; /* Remplacez par l'image de fond */
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: auto; /* Permettre le défilement si le contenu dépasse la hauteur de la fenêtre */
+}
+
+/* Styles de base pour le corps de la page */
+.e8 {
+  margin: 0;
+  padding: 0;
+  font-family: "Comic Sans MS", "Comic Sans", cursive; /* Choix d'une police manuscrite pour un style similaire */
+  background: url("img8.webp") no-repeat center center fixed; /* Remplacez par l'image de fond */
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: auto; /* Permettre le défilement si le contenu dépasse la hauteur de la fenêtre */
+}

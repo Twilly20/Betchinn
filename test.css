@@ -2,7 +2,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "Comic Sans MS", "Comic Sans"; /* Choix d'une police manuscrite pour un style similaire */
+  font-family: Arial, sans-serif;/* Choix d'une police manuscrite pour un style similaire */
   background: url("img3.jpeg") no-repeat center center fixed; /* Remplacez par l'image de fond */
   background-size: cover;
   display: flex;

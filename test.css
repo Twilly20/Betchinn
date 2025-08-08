@@ -1,3 +1,25 @@
+/* Police unique et héritée partout */
+:root { --app-font: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+
+html { font-size: 100%; font-family: var(--app-font); }
+body {
+  font: 1rem/1.5 var(--app-font);
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Forcer l’héritage (écrase les polices bizarres locales) */
+*, *::before, *::after { font-family: inherit !important; }
+
+/* iOS: évite artefacts rendu (notamment avec fixed) */
+@media (max-width: 480px) {
+  body, .e2, .e3, .e4, .e5, .e6, .e7, .e8 { background-attachment: scroll; }
+}
+
+
+
 /* Base typographique (desktop & mobile) */
 html {
   font-size: 100%; /* 16px par défaut */
